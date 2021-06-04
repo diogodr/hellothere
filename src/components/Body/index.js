@@ -3,8 +3,6 @@ import Navbar from '../Navbar';
 import TrendGifs from '../TrendGifs';
 import RandomGifs from '../RandomGifs';
 
-// import { Container } from './styles';
-
 function Body() {
   const [menu, setMenu] = useState("trend");
 

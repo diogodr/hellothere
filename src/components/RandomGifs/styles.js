@@ -14,17 +14,17 @@ export const Content = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 
-  div {
+  > div {
     width: 50%;
     padding: 4px;
     margin: 8px;
-    background-color: #fff;
+    background-color: #060113;
     border-radius: 1px;
+    color: #fff;
 
     @media (max-width: 720px) {
       width: 80%;
     }
-
 
     > div {
       width: 100%;
@@ -33,7 +33,12 @@ export const Content = styled.div`
       justify-content: space-between;
       padding: 0;
       margin: 0;
-      
+
+      div {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+      }      
 
       img {
         width: 20px;

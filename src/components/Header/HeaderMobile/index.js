@@ -24,9 +24,7 @@ function HeaderMobile() {
         </div>
         <div className="input-search">
           <input type="text" placeholder="O que está procurando?" />
-
           <img src={searchIconImg} alt="corebiz" />
-
         </div>
       </Content>
     </Container>

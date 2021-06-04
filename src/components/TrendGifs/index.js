@@ -17,18 +17,36 @@ function TrendGifs() {
   const [offSet, setOffSet] = useState(0);
 
   async function getTrendGifs() {
-    let number = offSet;
-    number++;
     const { data } = await api.get(`trending?offset=${offSet}`);
     setGifList([...gifList, ...data.data]);
-    setOffSet(number);
-    console.log("OffSet: ", offSet);
+    setOffSet(offSet + 1);
     setIsFetching(false);
   }
 
   async function searchGifs() {
     const { data } = await api.get(`search?q=${textSearch}`);
     setGifList(data.data);
+  }
+
+  async function saveGif() {
+    // const response = await api.post('/saveGif', {
+
+    // })
+    alert("Gif salvo no servidor com sucesso!")
+  }
+
+  async function changeGif() {
+    // const response = await api.put('/changeGif', {
+
+    // })
+    alert("Gif editado com sucesso!")
+  }
+
+  async function deleteGif() {
+    // const response = await api.delete('/deleteGif', {
+
+    // })
+    alert("Gif deletado do servidor com sucesso!")
   }
 
   const handleScroll = () => {
@@ -64,13 +82,13 @@ function TrendGifs() {
             <div>
               <p>{gif.title}</p>
               <div>
-                <a>
+                <a onClick={saveGif}>
                   <img src={saveIcon} alt="enviar" />
                 </a>
-                <a>
+                <a onClick={changeGif}>
                   <img src={editIcon} alt="enviar" />
                 </a>
-                <a>
+                <a onClick={deleteGif}>
                   <img src={deleteIcon} alt="enviar" />
                 </a>
               </div>
